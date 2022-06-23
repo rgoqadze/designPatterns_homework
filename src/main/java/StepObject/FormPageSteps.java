@@ -1,40 +1,40 @@
 package StepObject;
 
 import PageObject.FormsPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class FormPageSteps extends FormsPage {
-    public FormsPage ClickForm() {
-        Forms.click();
-        return this;
-    }
+public class FormPageSteps  {
+     WebDriver driver;
 
-    public FormsPage ClickPracticeForm() {
-        PracticeForms.click();
-        return this;
-    }
 
     public FormPageSteps FillFirstName (String FirstNameValue){
-        FirstName.sendKeys(FirstNameValue);
+        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
+        field.FirstName.sendKeys(FirstNameValue);
         return this;
     }
 
-    public FormsPage FillLastName (String LastNameValue) {
-        LastName.sendKeys(LastNameValue);
+    public FormPageSteps FillLastName (String LastNameValue) {
+        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
+        field.LastName.sendKeys(LastNameValue);
         return this;
     }
 
-    public FormsPage ChooseGender(){
-        Gender.click();
+    public FormPageSteps ChooseGender(){
+        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
+        field.Gender.click();
         return this;
     }
 
-    public FormsPage FillPhoneNumber(String PhoneNumberValue) {
-        PhoneNumber.sendKeys(PhoneNumberValue);
+    public FormPageSteps FillPhoneNumber(String PhoneNumberValue) {
+        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
+        field.PhoneNumber.sendKeys(PhoneNumberValue);
         return this;
     }
 
-    public FormsPage ClickSubmit() {
-        Submitt.click();
+    public FormPageSteps ClickSubmit() {
+        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
+        field.Submit.click();
         return this;
     }
 

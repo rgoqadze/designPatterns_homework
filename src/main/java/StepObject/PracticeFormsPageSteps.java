@@ -1,14 +1,14 @@
 package StepObject;
 
 import PageObject.PracticeFormPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class PracticeFormsPageSteps {
-    WebDriver driver;
+public class PracticeFormsPageSteps extends PracticeFormPage {
+    @Step("Go To Practice Form Page")
     public PracticeFormsPageSteps ClickPracticeForm() {
-        PracticeFormPage field= PageFactory.initElements(driver, PracticeFormPage.class);
-        field.PracticeForms.click();
+        PracticeForms.click();
         return this;
     }
 }

@@ -8,12 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
-    WebDriver driver;
-
-            @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[2]")
-            public SelenideElement Forms;
-
-            public MainPage (WebDriver driver){
-                this.driver = driver;
-            }
+    public SelenideElement
+            Forms = $(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]"));
 }

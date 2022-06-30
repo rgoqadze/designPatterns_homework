@@ -4,15 +4,12 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+
 public class PracticeFormPage {
-    WebDriver driver;
-
-    @FindBy(xpath = "//*[@id=\"item-0\"]")
-    public SelenideElement PracticeForms;
-
-    public PracticeFormPage (WebDriver driver){
-        this.driver = driver;
-    }
+    public SelenideElement
+        PracticeForms =$(byText("Practice Form"));
 }
 
 

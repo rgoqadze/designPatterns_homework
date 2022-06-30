@@ -1,41 +1,34 @@
 package StepObject;
 
 import PageObject.FormsPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class FormPageSteps  {
-     WebDriver driver;
-
-
+public class FormPageSteps extends FormsPage  {
+    @Step("Fill Firstname Input{0}")
     public FormPageSteps FillFirstName (String FirstNameValue){
-        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
-        field.FirstName.sendKeys(FirstNameValue);
+        FirstName.sendKeys(FirstNameValue);
         return this;
     }
-
-    public FormPageSteps FillLastName (String LastNameValue) {
-        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
-        field.LastName.sendKeys(LastNameValue);
+    @Step("Fill Lastname Input{1}")
+    public FormsPage FillLastName (String LastNameValue) {
+        LastName.sendKeys(LastNameValue);
         return this;
     }
-
-    public FormPageSteps ChooseGender(){
-        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
-        field.Gender.click();
+    @Step("Choose Gender - Male")
+    public FormsPage ChooseGender(){
+        Gender.click();
         return this;
     }
-
-    public FormPageSteps FillPhoneNumber(String PhoneNumberValue) {
-        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
-        field.PhoneNumber.sendKeys(PhoneNumberValue);
+    @Step("Fill Phonenumber input{2}")
+    public FormsPage FillPhoneNumber(String PhoneNumberValue) {
+        PhoneNumber.sendKeys(PhoneNumberValue);
         return this;
     }
-
-    public FormPageSteps ClickSubmit() {
-        FormsPage field= PageFactory.initElements(driver, FormsPage.class);
-        field.Submit.click();
+    @Step("Click SubmiT Button")
+    public FormsPage ClickSubmit() {
+        Submitt.click();
         return this;
     }
-
 }

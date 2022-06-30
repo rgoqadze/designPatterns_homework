@@ -1,14 +1,12 @@
 package StepObject;
-
 import PageObject.MainPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
+import io.qameta.allure.Step;
 
-public class MainPageSteps {
-    WebDriver driver;
+
+public class MainPageSteps extends MainPage {
+    @Step
     public MainPageSteps ClickForm() {
-        MainPage field= PageFactory.initElements(driver, MainPage.class);
-        field.Forms.click();
+        Forms.click();
         return this;
     }
 }
